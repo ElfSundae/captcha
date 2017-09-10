@@ -1,7 +1,7 @@
 :warning: A patched package to [mews/captcha](https://github.com/mewebstudio/captcha)
 
 ```sh
-composer install elfsundae/laravel-captcha
+composer require elfsundae/laravel-captcha
 ```
 
 - See [patch log](PATCHLOG.md)
