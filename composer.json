@@ -11,6 +11,11 @@
 			"email": "me@mewebstudio.com",
 			"homepage": "https://github.com/mewebstudio",
 			"role": "Developer"
+		},
+		{
+			"name": "Elf Sundae",
+			"email": "elf.sundae@gmail.com",
+			"homepage": "https://0x123.com"
 		}
 	],
 	"require": {
