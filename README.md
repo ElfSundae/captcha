@@ -1,3 +1,13 @@
+:warning: A patched package to [mews/captcha](https://github.com/mewebstudio/captcha)
+
+```sh
+composer install elfsundae/laravel-captcha
+```
+
+- See [patch log](PATCHLOG.md)
+
+---
+
 # Captcha for Laravel 5
 
 [![Build Status](https://travis-ci.org/mewebstudio/captcha.svg?branch=master)](https://travis-ci.org/mewebstudio/captcha) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mewebstudio/captcha/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mewebstudio/captcha/?branch=master)
@@ -116,7 +126,7 @@ return [
                 echo '<p style="color: #00ff30;">Matched :)</p>';
             }
         }
-    
+
         $form = '<form method="post" action="captcha-test">';
         $form .= '<input type="hidden" name="_token" value="' . csrf_token() . '">';
         $form .= '<p>' . captcha_img() . '</p>';
