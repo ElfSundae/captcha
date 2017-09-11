@@ -15,12 +15,12 @@ namespace Mews\Captcha;
  */
 
 use Exception;
-use Illuminate\Config\Repository;
-use Illuminate\Hashing\BcryptHasher as Hasher;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManager;
-use Illuminate\Session\Store as Session;
+use Illuminate\Contracts\Session\Session;
 
 /**
  * Class Captcha
