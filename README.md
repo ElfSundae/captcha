@@ -1,4 +1,5 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/elfsundae/laravel-captcha.svg?style=flat-square)](https://packagist.org/packages/elfsundae/laravel-captcha)
+[![Build Status](https://img.shields.io/travis/ElfSundae/laravel-captcha/master.svg?style=flat-square)](https://travis-ci.org/ElfSundae/laravel-captcha)
 
 :four_leaf_clover: A patched package to [mews/captcha](https://github.com/mewebstudio/captcha)
 
