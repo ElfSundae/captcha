@@ -11,15 +11,18 @@
 			"email": "me@mewebstudio.com",
 			"homepage": "https://github.com/mewebstudio",
 			"role": "Developer"
+		},
+		{
+			"name": "Elf Sundae",
+			"email": "elf.sundae@gmail.com",
+			"homepage": "https://0x123.com"
 		}
 	],
 	"require": {
-		"php": ">=5.4",
-		"ext-gd": "*",
-		"illuminate/config": "~5.0",
-		"illuminate/filesystem": "~5.0",
+		"php": ">=5.6.4",
 		"illuminate/support": "~5.0",
-		"illuminate/hashing": "~5.0",
+		"illuminate/contracts": "~5.0",
+		"illuminate/filesystem": "~5.0",
 		"intervention/image": "~2.2"
 	},
 	"require-dev": {
@@ -42,5 +45,14 @@
 			"Mews\\Test\\": "tests/"
 		}
 	},
-	"minimum-stability": "dev"
+	"extra": {
+        "laravel": {
+            "providers": [
+                "Mews\\Captcha\\CaptchaServiceProvider"
+            ],
+            "aliases": {
+                "Captcha": "Mews\\Captcha\\Facades\\Captcha"
+            }
+        }
+    }
 }

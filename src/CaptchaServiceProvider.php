@@ -59,10 +59,10 @@ class CaptchaServiceProvider extends ServiceProvider {
         {
             return new Captcha(
                 $app['Illuminate\Filesystem\Filesystem'],
-                $app['Illuminate\Config\Repository'],
+                $app['Illuminate\Contracts\Config\Repository'],
                 $app['Intervention\Image\ImageManager'],
-                $app['Illuminate\Session\Store'],
-                $app['Illuminate\Hashing\BcryptHasher'],
+                $app['Illuminate\Contracts\Session\Session'],
+                $app['Illuminate\Contracts\Hashing\Hasher'],
                 $app['Illuminate\Support\Str']
             );
         });

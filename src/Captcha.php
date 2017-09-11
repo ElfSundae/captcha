@@ -15,12 +15,12 @@ namespace Mews\Captcha;
  */
 
 use Exception;
-use Illuminate\Config\Repository;
-use Illuminate\Hashing\BcryptHasher as Hasher;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManager;
-use Illuminate\Session\Store as Session;
+use Illuminate\Contracts\Session\Session;
 
 /**
  * Class Captcha
@@ -215,6 +215,9 @@ class Captcha
         $this->backgrounds = $this->files->files(__DIR__ . '/../assets/backgrounds');
         $this->fonts = $this->files->files(__DIR__ . '/../assets/fonts');
         $this->fonts = array_values($this->fonts); //reset fonts array index
+        $this->fonts = array_map(function ($value) {
+            return method_exists($value, 'getRealPath') ? $value->getRealPath() : $value;
+        }, $this->fonts);
 
         $this->configure($config);
 
