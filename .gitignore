@@ -2,6 +2,7 @@
 .env.*.php
 .env.php
 composer.lock
-vendor
+/vendor
+/build
 /.idea
 /.settings
