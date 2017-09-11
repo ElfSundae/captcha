@@ -119,7 +119,7 @@ return [
         if (Request::getMethod() == 'POST')
         {
             $rules = ['captcha' => 'required|captcha'];
-            $validator = Validator::make(Input::all(), $rules);
+            $validator = Validator::make(Request::all(), $rules);
             if ($validator->fails())
             {
                 echo '<p style="color: #ff0000;">Incorrect!</p>';
