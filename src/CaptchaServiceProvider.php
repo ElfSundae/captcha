@@ -62,8 +62,7 @@ class CaptchaServiceProvider extends ServiceProvider {
                 $app['Illuminate\Contracts\Config\Repository'],
                 $app['Intervention\Image\ImageManager'],
                 $app['Illuminate\Contracts\Session\Session'],
-                $app['Illuminate\Contracts\Hashing\Hasher'],
-                $app['Illuminate\Support\Str']
+                $app['Illuminate\Contracts\Hashing\Hasher']
             );
         });
     }

@@ -55,11 +55,6 @@ class Captcha
     protected $hasher;
 
     /**
-     * @var Str
-     */
-    protected $str;
-
-    /**
      * @var ImageManager->canvas
      */
     protected $canvas;
@@ -167,7 +162,6 @@ class Captcha
      * @param ImageManager $imageManager
      * @param Session $session
      * @param Hasher $hasher
-     * @param Str $str
      * @throws Exception
      * @internal param Validator $validator
      */
@@ -176,8 +170,7 @@ class Captcha
         Repository $config,
         ImageManager $imageManager,
         Session $session,
-        Hasher $hasher,
-        Str $str
+        Hasher $hasher
     )
     {
         $this->files = $files;
@@ -185,7 +178,6 @@ class Captcha
         $this->imageManager = $imageManager;
         $this->session = $session;
         $this->hasher = $hasher;
-        $this->str = $str;
         $this->characters = config('captcha.characters','2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ');
     }
 
@@ -294,7 +286,7 @@ class Captcha
 
         $this->session->put('captcha', [
             'sensitive' => $this->sensitive,
-            'key'       => $this->hasher->make($this->sensitive ? $bag : $this->str->lower($bag))
+            'key'       => $this->hasher->make($this->sensitive ? $bag : Str::lower($bag))
         ]);
 
         return $bag;
@@ -413,7 +405,7 @@ class Captcha
 
         if ( ! $this->session->get('captcha.sensitive'))
         {
-            $value = $this->str->lower($value);
+            $value = Str::lower($value);
         }
 
         $this->session->remove('captcha');
@@ -429,7 +421,7 @@ class Captcha
      */
     public function src($config = null)
     {
-        return url('captcha' . ($config ? '/' . $config : '/default')) . '?' . $this->str->random(8);
+        return url('captcha' . ($config ? '/' . $config : '/default')) . '?' . Str::random(8);
     }
 
     /**
