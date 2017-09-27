@@ -178,7 +178,7 @@ class Captcha
         $this->imageManager = $imageManager;
         $this->session = $session;
         $this->hasher = $hasher;
-        $this->characters = config('captcha.characters','2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ');
+        $this->characters = $this->config->get('captcha.characters','2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ');
     }
 
     /**
