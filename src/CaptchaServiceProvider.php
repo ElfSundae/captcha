@@ -20,7 +20,7 @@ class CaptchaServiceProvider extends ServiceProvider {
         // Publish configuration files
         $this->publishes([
             __DIR__.'/../config/captcha.php' => config_path('captcha.php')
-        ], 'config');
+        ], 'captcha');
 
         // HTTP routing
         /*
@@ -62,8 +62,7 @@ class CaptchaServiceProvider extends ServiceProvider {
                 $app['Illuminate\Contracts\Config\Repository'],
                 $app['Intervention\Image\ImageManager'],
                 $app['Illuminate\Contracts\Session\Session'],
-                $app['Illuminate\Contracts\Hashing\Hasher'],
-                $app['Illuminate\Support\Str']
+                $app['Illuminate\Contracts\Hashing\Hasher']
             );
         });
     }
