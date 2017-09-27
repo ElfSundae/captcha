@@ -8,10 +8,11 @@
 Route::get('captcha/{config?}', '\Mews\Captcha\CaptchaController@getCaptcha');
 ```
 
-## [Unreleased]
+## 2.2.1 (2017-09-27)
 
 - Change publish tag to "captcha" [02f3d0b](https://github.com/ElfSundae/laravel-captcha/commit/02f3d0b6de4ae03005face03dc9d1924e1a409cd)
 - Use `Str` static methods instead of `$str` instance in `Captcha.php` [b7c826b](https://github.com/ElfSundae/laravel-captcha/commit/b7c826b3e01aa34d6c198675be548d72fdb57b42)
+- Use `$this->config->get()` instead of `config()` [23706e0](https://github.com/ElfSundae/laravel-captcha/commit/23706e02be1229fee9f7d69c08fa5b0dc0038ae5)
 
 ## 2.2.0 (2017-09-11)
 
